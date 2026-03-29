@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankit Premi — AI/ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+<link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+<div id="grain"></div>
+<div id="c-dot"></div>
+<div id="c-ring"></div>
+<div id="c-trail"></div>
+<div id="loader">
+  <div class="loader-line"><div class="loader-word" id="lw1">Ankit</div></div>
+  <div class="loader-line"><div class="loader-word" id="lw2" style="padding-left:.06em;">Premi</div></div>
+  <div id="loader-status">
+    <div id="loader-pct">000</div>
+    <div id="loader-track"><div id="loader-fill"></div></div>
+    <div id="loader-phase">Initializing</div>
+  </div>
+</div>
+<div id="intel-hud">
+  <div class="hud-r"><span class="hud-l">Energy</span><div class="hud-b"><div class="hud-f" id="hud-e"></div></div><span class="hud-v" id="hud-ev">0</span></div>
+  <div class="hud-r"><span class="hud-l">Focus</span><div class="hud-b"><div class="hud-f" id="hud-f" style="background:var(--electric);"></div></div><span class="hud-v" id="hud-fv">0</span></div>
+  <div class="hud-r"><span class="hud-l">Phase</span><span style="font-family:var(--f-mono);font-size:8px;letter-spacing:.2em;color:rgba(201,168,76,0.2);text-transform:uppercase;" id="hud-ph">INIT</span></div>
+</div>
+<canvas id="master-canvas"></canvas>
+<nav id="navbar">
+  <a href="#" class="nav-logo">AP ∕ Portfolio</a>
+  <ul class="nav-links">
+    <li><a href="#about">Identity</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Timeline</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-intel"><div class="nav-pulse"></div><span id="nav-ph">Intelligence · Init</span></div>
+</nav>
+<div id="modal">
+  <button class="modal-close" id="modal-close"><span>Close</span><div class="modal-x">✕</div></button>
+  <div class="modal-wrap" id="modal-body"></div>
+</div>
+<section class="section" id="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-status"><div class="hero-status-dot"></div><span>AI/ML Engineer · GenAI · MLOps · NLP Specialist</span></div>
+    <h1 class="hero-name">
+      <span class="hero-name-line"><span class="hero-name-word">Ankit</span></span>
+      <span class="hero-name-line"><span class="hero-name-word">Premi</span></span>
+    </h1>
+    <div class="hero-foot">
+      <div class="hero-role"><strong>Specializing in GenAI, Agentic AI &amp; MLOps</strong><br>Vodafone Intelligent Solutions · C-DOT · MAIT Delhi · 2026</div>
+      <div class="hero-inf"><div class="hero-inf-sym">∞</div></div>
+      <div class="hero-cta">Scroll to explore<div class="hero-line"></div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="s-marker reveal"><span class="s-marker-num">02</span>Identity</div>
+        <h2 class="about-heading reveal d1">Building machines<br>that <em>understand,</em><br>reason &amp; decide.</h2>
+        <div class="about-body reveal d2">
+          <p>AI/ML Engineer specializing in GenAI, Agentic AI, and MLOps. I engineer systems that don't just process data — they derive meaning, surface insight, and drive decisions at scale.</p>
+          <p>From RAG-powered analytics at Vodafone to phishing detection ML at C-DOT benchmarked on 100,000+ live URLs — delivering production ML solutions for Fortune 500 and Government clients.</p>
+          <p>Completing B.Tech in AI &amp; Data Science at MAIT Delhi, graduating 2026.</p>
+        </div>
+        <div class="about-metrics reveal d3">
+          <div class="metric"><div class="metric-val counter" data-val="100">0<sup>+</sup></div><div class="metric-label">LeetCode Solved</div></div>
+          <div class="metric"><div class="metric-val counter" data-val="89">0<sup>%</sup></div><div class="metric-label">Phishing Detection Precision</div></div>
+          <div class="metric"><div class="metric-val counter" data-val="75">0<sup>%</sup></div><div class="metric-label">Reporting Time Reduced</div></div>
+          <div class="metric"><div class="metric-val counter" data-val="95">0<sup>%</sup></div><div class="metric-label">RAG Accuracy Achieved</div></div>
+        </div>
+      </div>
+      <div class="about-right"><canvas id="entity-canvas"></canvas>
+        <div class="entity-footer">
+          <span class="entity-label">Intelligence · Entity</span>
+          <span class="entity-phase" id="entity-ph">INIT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="skills-header">
+      <h2 class="skills-heading reveal">Skills &amp;<br>Expertise</h2>
+      <div class="skills-meta reveal d2">Intelligence-reactive<br>force network</div>
+    </div>
+    
+    <div class="bento-grid">
+      <div class="bento-card b-large reveal d1">
+        <div class="bc-num">01</div>
+        <div class="bc-title">GenAI & LLMs</div>
+        <div class="bc-icon">✧</div>
+        <div class="bc-chips">
+          <span class="bc-chip">GPT-4 / Claude</span><span class="bc-chip">LangChain</span><span class="bc-chip">LlamaIndex</span><span class="bc-chip">RAG Systems</span><span class="bc-chip">Hugging Face</span><span class="bc-chip">Fine-tuning</span>
+        </div>
+      </div>
+      <div class="bento-card b-wide reveal d2">
+        <div class="bc-num">02</div>
+        <div class="bc-title">MLOps & Cloud</div>
+        <div class="bc-icon">☁</div>
+        <div class="bc-chips">
+          <span class="bc-chip">AWS SageMaker</span><span class="bc-chip">Lambda / S3</span><span class="bc-chip">Azure ML</span><span class="bc-chip">GCP Vertex AI</span><span class="bc-chip">MLflow</span><span class="bc-chip">Docker</span>
+        </div>
+      </div>
+      <div class="bento-card b-tall reveal d3">
+        <div class="bc-num">03</div>
+        <div class="bc-title">ML & CV</div>
+        <div class="bc-icon">❂</div>
+        <div class="bc-chips">
+          <span class="bc-chip">PyTorch</span><span class="bc-chip">TensorFlow</span><span class="bc-chip">XGBoost / RF</span><span class="bc-chip">YOLO</span><span class="bc-chip">Scikit-learn</span>
+        </div>
+      </div>
+      <div class="bento-card b-norm reveal d1">
+        <div class="bc-num">04</div>
+        <div class="bc-title">Programming</div>
+        <div class="bc-icon">⟨⟩</div>
+        <div class="bc-chips">
+          <span class="bc-chip">Python</span><span class="bc-chip">C++ / Java</span><span class="bc-chip">SQL</span><span class="bc-chip">JavaScript</span>
+        </div>
+      </div>
+      <div class="bento-card b-wide reveal d2">
+        <div class="bc-num">05</div>
+        <div class="bc-title">Data & Vectors</div>
+        <div class="bc-icon">▤</div>
+        <div class="bc-chips">
+          <span class="bc-chip">Pandas</span><span class="bc-chip">Pinecone</span><span class="bc-chip">PostgreSQL</span><span class="bc-chip">MongoDB</span><span class="bc-chip">Power BI</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="s-marker reveal"><span class="s-marker-num">04</span>Selected Work</div>
+    <h2 class="work-heading reveal">Selected<br>Projects</h2>
+    <div id="project-list"></div>
+  </div>
+</section>
+
+
+<section class="section" id="consulting">
+  <div class="wrap">
+    <div class="s-marker reveal"><span class="s-marker-num">04.5</span>Consulting</div>
+    <div class="consult-layout">
+      <div class="consult-text">
+        <h2 class="consult-heading reveal">Strategic<br><em>AI Advisory</em></h2>
+        <p class="consult-sub reveal d1">I bridge the gap between raw intelligence and tangible business value. From Fortune 500 to Government — I translate complex ML systems into decisions that matter.</p>
+        <div class="consult-pillars reveal d2">
+          <div class="consult-pillar"><span class="cp-dot"></span>Problem Framing</div>
+          <div class="consult-pillar"><span class="cp-dot"></span>Data Strategy</div>
+          <div class="consult-pillar"><span class="cp-dot"></span>ML Architecture</div>
+          <div class="consult-pillar"><span class="cp-dot"></span>Stakeholder Alignment</div>
+          <div class="consult-pillar"><span class="cp-dot"></span>Technical Advisory</div>
+          <div class="consult-pillar"><span class="cp-dot"></span>Delivery & Impact</div>
+        </div>
+      </div>
+      <div class="consult-canvas-wrap reveal d2">
+        <canvas id="consult-canvas"></canvas>
+        <div class="consult-center-label">Strategic<br>AI Consulting</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="exp-grid">
+      <div><div class="s-marker reveal"><span class="s-marker-num">05</span>Career</div><h2 class="exp-left-head reveal">Professional<br>Timeline</h2></div>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-spine"></div><div>
+          <div class="tl-period">Sep – Oct 2025</div>
+          <div class="tl-role">Data Analyst Intern</div>
+          <div class="tl-company">VOIS · Vodafone Intelligent Solutions · Remote</div>
+          <div class="tl-desc">
+            <ul style="margin-left: 16px; margin-bottom: 12px; list-style-type: none;">
+              <li style="position: relative; padding-bottom: 6px;"><span style="position: absolute; left:-16px; color: var(--gold);">▹</span>Automated enterprise reporting with RAG + LLMs, reducing manual work by 75%</li>
+              <li style="position: relative; padding-bottom: 6px;"><span style="position: absolute; left:-16px; color: var(--gold);">▹</span>Architected API-driven data pipeline with real-time LLM summarization</li>
+              <li style="position: relative; padding-bottom: 6px;"><span style="position: absolute; left:-16px; color: var(--gold);">▹</span>Launched Slack-integrated analytics system serving 50+ stakeholders daily</li>
+              <li style="position: relative; padding-bottom: 6px;"><span style="position: absolute; left:-16px; color: var(--gold);">▹</span>Operationalized scalable inference workflows on AWS Lambda and S3</li>
+              <li style="position: relative;"><span style="position: absolute; left:-16px; color: var(--gold);">▹</span>Achieved 92% stakeholder satisfaction via context-aware AI reports</li>
+            </ul>
+          </div>
+          <div class="tl-chips"><span class="tl-chip">Python</span><span class="tl-chip">GPT-4</span><span class="tl-chip">LangChain</span><span class="tl-chip">RAG</span><span class="tl-chip">AWS Lambda</span><span class="tl-chip">REST APIs</span></div>
+        </div></div>
+        <div class="tl-item d1"><div class="tl-spine"></div><div>
+          <div class="tl-period">Jul – Aug 2025</div>
+          <div class="tl-role">Research &amp; Development Intern</div>
+          <div class="tl-company">C-DOT · Centre for Development of Telematics · New Delhi</div>
+          <div class="tl-desc">
+            <ul style="margin-left: 16px; margin-bottom: 12px; list-style-type: none;">
+              <li style="position: relative; padding-bottom: 6px;"><span style="position: absolute; left:-16px; color: var(--gold);">▹</span>Developed phishing detection ML system (89% precision, 86% recall) benchmarked on 1,00,000+ live URLs</li>
+              <li style="position: relative; padding-bottom: 6px;"><span style="position: absolute; left:-16px; color: var(--gold);">▹</span>Engineered 45+ features: regex patterns, TLD signals, URLNet embeddings, semantic vectors</li>
+              <li style="position: relative; padding-bottom: 6px;"><span style="position: absolute; left:-16px; color: var(--gold);">▹</span>Optimized RF+XGBoost ensemble improving F1-score by 12%</li>
+              <li style="position: relative;"><span style="position: absolute; left:-16px; color: var(--gold);">▹</span>Productionized automated ML pipeline for preprocessing, training, evaluation</li>
+            </ul>
+          </div>
+          <div class="tl-chips"><span class="tl-chip">Python</span><span class="tl-chip">XGBoost</span><span class="tl-chip">Scikit-learn</span><span class="tl-chip">Feature Engineering</span><span class="tl-chip">MLOps</span></div>
+        </div></div>
+        <div class="tl-item d2"><div class="tl-spine"></div><div><div class="tl-period">2022 – 2026</div><div class="tl-role">B.Tech — AI &amp; Data Science</div><div class="tl-company">MAIT · Maharaja Agrasen Institute of Technology · Delhi · <span style="color:var(--gold);">CGPA: 8.5/10</span></div><div class="tl-desc">Comprehensive curriculum: Machine Learning, Deep Learning, NLP, Computer Vision, MLOps, Cloud Computing, DSA. Active in competitive programming and applied research projects.</div><div class="tl-chips"><span class="tl-chip">ML</span><span class="tl-chip">Deep Learning</span><span class="tl-chip">NLP</span><span class="tl-chip">Computer Vision</span><span class="tl-chip">Cloud</span></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="credentials">
+  <div class="wrap">
+    <div class="s-marker reveal"><span class="s-marker-num">05.5</span>Credentials</div>
+    <div class="cred-grid">
+      <!-- Certifications -->
+      <div class="cred-block reveal d1">
+        <div class="cred-heading">Certifications</div>
+        <div class="cred-list">
+          <div class="cred-item"><span class="cred-provider">Microsoft</span><span class="cred-name">GenAI Essentials</span></div>
+          <div class="cred-item"><span class="cred-provider">Google Cloud</span><span class="cred-name">Vertex AI Gemini</span></div>
+          <div class="cred-item"><span class="cred-provider">DeepLearning.AI</span><span class="cred-name">ML Specialization</span></div>
+          <div class="cred-item"><span class="cred-provider">Google</span><span class="cred-name">BigQuery Analytics</span></div>
+          <div class="cred-item"><span class="cred-provider">Google</span><span class="cred-name">Python Programming</span></div>
+          <div class="cred-item"><span class="cred-provider">Stanford</span><span class="cred-name">Statistics for Data Science</span></div>
+        </div>
+      </div>
+      <!-- Key Strengths -->
+      <div class="cred-block reveal d2">
+        <div class="cred-heading">Key Strengths</div>
+        <div class="strength-grid">
+          <div class="strength-pill">Production ML</div>
+          <div class="strength-pill">Agentic AI Systems</div>
+          <div class="strength-pill">End-to-End Deployment</div>
+          <div class="strength-pill">Multi-Cloud Expertise</div>
+          <div class="strength-pill">Rapid GenAI Mastery</div>
+          <div class="strength-pill">LeetCode · 100+ Solved</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="human" style="padding: 160px 0; background: rgba(3, 5, 7, 0.4); border-top: 1px solid rgba(255,255,255,0.03);">
+  <div class="wrap">
+    <div class="s-marker reveal"><span class="s-marker-num">06</span>The Human Side</div>
+    <h2 class="human-heading reveal">Beyond models<br>and metrics.</h2>
+    <p class="human-sub reveal d1">I value moments. Precision in code, presence in life.<br>Building intelligence, without losing humanity.</p>
+    
+    <div class="human-grid">
+      <div class="human-card reveal d2" id="hc-pingpong">
+        <div class="hc-icon">🏓</div>
+        <h3 class="hc-title">Focus & Reflex</h3>
+        <p class="hc-desc">I love table tennis. The rapid exchange, the precision of a spin, the immediate reflex demanding total presence.</p>
+      </div>
+      
+      <div class="human-card reveal d3" id="hc-pets">
+        <div class="hc-icon">🐾</div>
+        <h3 class="hc-title">Empathy & Connection</h3>
+        <p class="hc-desc">Animals and pets teach us trust in its purest form. They bring me grounded happiness and unspoken connection.</p>
+      </div>
+      
+      <div class="human-card reveal d4" id="hc-nature">
+        <div class="hc-icon">🌿</div>
+        <h3 class="hc-title">Calm & Balance</h3>
+        <p class="hc-desc">I find clarity in nature. It reminds me that true intelligence thrives in flowing, adaptable ecosystems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experimental" style="padding-bottom:0;">
+  <div class="wrap" style="padding-bottom:80px;"><div class="s-marker reveal"><span class="s-marker-num">07</span>Generative Intelligence</div></div>
+  <div id="exp-wrap">
+    <canvas id="exp-canvas"></canvas>
+    <div class="exp-ghost">
+      <div class="exp-ghost-t">Think</div>
+      <canvas id="neuron-canvas"></canvas>
+    </div>
+    <div class="exp-hint">Move cursor · Intelligence system responds</div>
+    <div class="exp-ebar" id="exp-ebar"></div>
+  </div>
+</section>
+<section class="section" id="contact">
+  <div class="contact-bg">Contact</div>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="s-marker reveal"><span class="s-marker-num">08</span>Contact</div>
+        <h2 class="contact-heading reveal">Let's<br>build<br>something<br>great.</h2>
+        <div class="reveal d2">
+          <a href="mailto:ankitpremiji@gmail.com" class="c-link"><div class="c-link-l"><div class="c-icon">✉</div><span class="c-text">ankitpremiji@gmail.com</span></div><span class="c-arr">↗</span></a>
+          <!-- Phone number hidden by request -->
+          <a href="https://linkedin.com/in/ankit-premi" target="_blank" class="c-link"><div class="c-link-l"><div class="c-icon" style="font-size:.55rem;font-weight:700;">in</div><span class="c-text">linkedin.com/in/ankit-premi</span></div><span class="c-arr">↗</span></a>
+          <a href="https://leetcode.com/u/ankitpremiji/" target="_blank" class="c-link"><div class="c-link-l"><div class="c-icon">◈</div><span class="c-text">leetcode.com/u/ankitpremiji</span></div><span class="c-arr">↗</span></a>
+        </div>
+      </div>
+      <form class="c-form reveal d1" id="cform">
+        <div class="c-field"><label>Name</label><input type="text" autocomplete="off"></div>
+        <div class="c-field"><label>Email</label><input type="email" autocomplete="off"></div>
+        <div class="c-field"><label>Subject</label><input type="text" autocomplete="off"></div>
+        <div class="c-field"><label>Message</label><textarea></textarea></div>
+        <button type="submit" class="c-submit"><span id="stext">Send message</span><span class="c-sarr">↗</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="fl">© 2026 Ankit Premi — All rights reserved</div>
+  <div class="fr">Built with intention · <a href="mailto:ankitpremiji@gmail.com">ankitpremiji@gmail.com</a></div>
+</footer>
+<script src="src/js/main.js"></script>
+</body>
+</html>
