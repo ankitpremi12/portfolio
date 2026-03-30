@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { PROJECTS, FLOWS } from "@/data/projects";
+import { PROJECTS, FLOWS, V_FLOWS } from "@/data/projects";
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -26,12 +26,20 @@ interface ProjectModalProps {
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const flowSvg = project ? FLOWS[project.id] : null;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const flowSvg = project ? (isMobile ? (V_FLOWS[project.id] || FLOWS[project.id]) : FLOWS[project.id]) : null;
 
   useEffect(() => {
     if (!project || !flowSvg || !containerRef.current) return;
     
-    // Quick frame delay to let React mount the dangerouslySetInnerHTML SVG
     const timer = setTimeout(() => {
       if (!containerRef.current) return;
       const svg = containerRef.current.querySelector('.modal-flow-svg');
@@ -42,7 +50,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       paths.forEach((path) => {
         for (let j = 0; j < 2; j++) {
           const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-          dot.setAttribute("r", "3.5");
+          dot.setAttribute("r", isMobile ? "2.5" : "3.5");
           dot.setAttribute("fill", project.glowColor || "#e8c56a");
           dot.setAttribute("filter", "url(#mf-glow)");
           svg.appendChild(dot);
@@ -59,7 +67,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     }, 50);
 
     return () => clearTimeout(timer);
-  }, [project, flowSvg]);
+  }, [project, flowSvg, isMobile]);
 
   if (!project) return null;
 
