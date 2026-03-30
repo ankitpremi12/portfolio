@@ -282,7 +282,12 @@ footer{padding:32px 56px;border-top:1px solid var(--border);display:flex;justify
 .strength-grid { display: flex; flex-wrap: wrap; gap: 12px; }
 .strength-pill { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; padding: 10px 20px; border: 1px solid rgba(201,168,76,0.2); color: rgba(201,168,76,0.75); border-radius: 40px; background: rgba(201,168,76,0.04); transition: all 0.4s var(--ease); cursor: none; }
 .strength-pill:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); color: var(--gold-bright); transform: translateY(-2px); }
-@media (max-width: 1024px) { .cred-grid { grid-template-columns: 1fr; gap: 48px; } }
+@media (max-width: 1024px) { 
+  .cred-grid { grid-template-columns: 1fr; gap: 48px; } 
+  .cred-item { flex-direction: column; align-items: flex-start; gap: 6px; padding: 20px 0; }
+  .cred-provider { min-width: auto; margin-bottom: 4px; }
+  .cred-name { font-size: 1rem; line-height: 1.4; color: var(--paper); }
+}
 
 /* ═══ HUMAN SIDE ══════════════════════════════════════════════ */
 #human { position: relative; z-index: 5; transition: background 2s var(--ease-slow); overflow: hidden;}
@@ -310,7 +315,8 @@ footer{padding:32px 56px;border-top:1px solid var(--border);display:flex;justify
 
 /* Architecture Flow */
 .arch-flow { position: relative; width: 100%; height: auto; background: rgba(8, 12, 18, 0.4); border: 1px solid var(--border); border-radius: 16px; backdrop-filter: blur(12px); padding: 24px 16px; overflow-x: auto; }
-.arch-svg { display: block; overflow: visible; font-family: var(--f-sans); min-width: 600px; width: 100%; height: auto; }
+.arch-svg { display: block; overflow: visible; font-family: var(--f-sans); min-width: 600px; width: 100%; height: auto; transition: all 0.3s ease; }
+@media (max-width: 768px) { .arch-svg { min-width: 100%; } }
 .arch-path { fill: none; stroke: rgba(255,255,255,0.08); stroke-width: 1.5; }
 .arch-path-grad { stroke: url(#pathGrad1); }
 .arch-node rect { fill: rgba(3,5,7,0.85); stroke: rgba(255,255,255,0.1); stroke-width: 1; transition: all 0.4s ease; cursor: none; }
@@ -324,7 +330,8 @@ footer{padding:32px 56px;border-top:1px solid var(--border);display:flex;justify
 
 /* Modal Flow Diagram */
 .modal-flow-wrap { margin-top: 24px; background: rgba(3,5,7,0.6); border: 1px solid var(--border); border-radius: 16px; padding: 24px 16px; overflow-x: auto; }
-.modal-flow-svg { display: block; min-width: 600px; width: 100%; height: auto; font-family: var(--f-sans); overflow: visible; }
+.modal-flow-svg { display: block; min-width: 600px; width: 100%; height: auto; font-family: var(--f-sans); overflow: visible; transition: all 0.3s ease; }
+@media (max-width: 768px) { .modal-flow-svg { min-width: 100%; } }
 .mf-path { fill: none; stroke: rgba(255,255,255,0.08); stroke-width: 1.5; }
 .mf-node rect { fill: rgba(8,12,18,0.9); stroke: rgba(255,255,255,0.1); stroke-width: 1; transition: all 0.3s; }
 .mf-node:hover rect { fill: rgba(201,168,76,0.07); stroke: rgba(201,168,76,0.4); }
