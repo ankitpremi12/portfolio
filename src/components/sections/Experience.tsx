@@ -73,6 +73,43 @@ export default function Experience() {
                         Productionized automated ML pipeline for preprocessing, training, evaluation
                       </li>
                     </ul>
+                    <div style={{ marginTop: 16, marginBottom: 4 }}>
+                      <a 
+                        href="https://phishguard-classifier-1rk0o7vyh-ankitpremi12s-projects.vercel.app" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: 10,
+                          color: 'var(--gold)',
+                          fontFamily: 'var(--f-mono)',
+                          fontSize: '9px',
+                          letterSpacing: '0.2em',
+                          textTransform: 'uppercase',
+                          textDecoration: 'none',
+                          padding: '8px 16px',
+                          border: '1px solid rgba(201, 168, 76, 0.25)',
+                          background: 'rgba(201, 168, 76, 0.05)',
+                          transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                          cursor: 'none'
+                        }}
+                        className="tl-project-btn"
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = 'rgba(201, 168, 76, 0.12)';
+                          e.currentTarget.style.borderColor = 'var(--gold)';
+                          e.currentTarget.style.transform = 'translateY(-1px)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'rgba(201, 168, 76, 0.05)';
+                          e.currentTarget.style.borderColor = 'rgba(201, 168, 76, 0.25)';
+                          e.currentTarget.style.transform = 'translateY(0)';
+                        }}
+                      >
+                        <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--gold)', boxShadow: '0 0 8px var(--gold)' }}></span>
+                        View Project ↗
+                      </a>
+                    </div>
                   </div>
                   <div className="tl-chips">
                     <span className="tl-chip">Python</span><span className="tl-chip">XGBoost</span><span className="tl-chip">Scikit-learn</span><span className="tl-chip">Feature Engineering</span><span className="tl-chip">MLOps</span>
