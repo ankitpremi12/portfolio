@@ -121,7 +121,7 @@ export default function Experience() {
                 <div>
                   <div className="tl-period">2022 – 2026</div>
                   <div className="tl-role">B.Tech — AI &amp; Data Science</div>
-                  <div className="tl-company">MAIT · Maharaja Agrasen Institute of Technology · Delhi · <span style={{ color: 'var(--gold)' }}>CGPA: 8.5/10</span></div>
+                  <div className="tl-company">MAIT · Maharaja Agrasen Institute of Technology · Delhi</div>
                   <div className="tl-desc">Comprehensive curriculum: Machine Learning, Deep Learning, NLP, Computer Vision, MLOps, Cloud Computing, DSA. Active in competitive programming and applied research projects.</div>
                   <div className="tl-chips">
                     <span className="tl-chip">ML</span><span className="tl-chip">Deep Learning</span><span className="tl-chip">NLP</span><span className="tl-chip">Computer Vision</span><span className="tl-chip">Cloud</span>
