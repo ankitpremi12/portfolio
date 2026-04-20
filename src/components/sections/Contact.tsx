@@ -63,17 +63,17 @@ export default function Contact() {
                   </div>
                   <span className="c-arr">↗</span>
                 </a>
-                <a href="https://linkedin.com/in/ankit-premi" target="_blank" rel="noreferrer" className="c-link">
+                <a href="https://www.linkedin.com/in/ankit-premi-a37b37255/" target="_blank" rel="noreferrer" className="c-link">
                   <div className="c-link-l">
                     <div className="c-icon" style={{ fontSize: '.55rem', fontWeight: 700 }}>in</div>
-                    <span className="c-text">linkedin.com/in/ankit-premi</span>
+                    <span className="c-text">linkedin.com/in/ankit-premi-a37b37255</span>
                   </div>
                   <span className="c-arr">↗</span>
                 </a>
-                <a href="https://github.com/ankitpremi" target="_blank" rel="noreferrer" className="c-link">
+                <a href="https://github.com/ankitpremi12" target="_blank" rel="noreferrer" className="c-link">
                   <div className="c-link-l">
                     <div className="c-icon"></div>
-                    <span className="c-text">github.com/ankitpremi</span>
+                    <span className="c-text">github.com/ankitpremi12</span>
                   </div>
                   <span className="c-arr">↗</span>
                 </a>

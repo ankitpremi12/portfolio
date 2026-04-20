@@ -44,7 +44,10 @@ export default function Projects() {
                   {p.tags.map(t => <span key={t} className="pr-tag">{t}</span>)}
                 </div>
                 <div className="pr-year">{p.year}</div>
-                <div className="pr-arrow">↗</div>
+                <div className="pr-arrow" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.2em' }}>Open</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
               </div>
             ))}
           </div>

@@ -14,6 +14,29 @@ export default function Experience() {
               <div className="tl-item">
                 <div className="tl-spine"></div>
                 <div>
+                  <div className="tl-period">Apr 2026 – Present</div>
+                  <div className="tl-role">AI Associate</div>
+                  <div className="tl-company">Rancho Labs · IIT Delhi</div>
+                  <div className="tl-desc">
+                    <ul style={{ marginLeft: 16, marginBottom: 12, listStyleType: 'none' }}>
+                      <li style={{ position: 'relative', paddingBottom: 6 }}>
+                        <span style={{ position: 'absolute', left: -16, color: 'var(--gold)' }}>▹</span>
+                        Working as an AI Associate on advanced Artificial Intelligence and Machine Learning applications
+                      </li>
+                      <li style={{ position: 'relative', paddingBottom: 6 }}>
+                        <span style={{ position: 'absolute', left: -16, color: 'var(--gold)' }}>▹</span>
+                        Collaborating with the research team to build and optimize AI-driven tools
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="tl-chips">
+                    <span className="tl-chip">AI</span><span className="tl-chip">Machine Learning</span><span className="tl-chip">Python</span>
+                  </div>
+                </div>
+              </div>
+              <div className="tl-item">
+                <div className="tl-spine"></div>
+                <div>
                   <div className="tl-period">Sep – Oct 2025</div>
                   <div className="tl-role">Data Analyst Intern</div>
                   <div className="tl-company">VOIS · Vodafone Intelligent Solutions · Remote</div>
