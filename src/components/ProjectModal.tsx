@@ -21,10 +21,11 @@ interface Project {
 
 interface ProjectModalProps {
   project: Project | null;
+  isOpen: boolean;
   onClose: () => void;
 }
 
-export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -72,7 +73,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   if (!project) return null;
 
   return (
-    <div id="modal" className={project ? "open" : ""} ref={containerRef}>
+    <div id="modal" className={isOpen ? "open" : ""} ref={containerRef}>
       <button id="modal-close" className="modal-close" onClick={onClose}>
         Close <div className="modal-x">✕</div>
       </button>

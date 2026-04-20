@@ -7,16 +7,21 @@ import { intel } from "@/lib/store";
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<any>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const openProject = (p: any) => {
     setActiveProject(p);
+    setIsOpen(true);
     document.body.style.overflow = "hidden";
     intel.interaction = 1;
   };
 
   const closeProject = () => {
-    setActiveProject(null);
+    setIsOpen(false);
     document.body.style.overflow = "";
+    setTimeout(() => {
+      setActiveProject(null);
+    }, 900);
   };
 
   return (
@@ -54,11 +59,8 @@ export default function Projects() {
         </div>
       </section>
       
-      {/* Persist the modal in DOM so it can close nicely, actually wait... 
-          if activeProject is null, ProjectModal returns null. 
-          The CSS transition won't play if it's instantly unmounted. 
-          Let's pass the activeProject but structure ProjectModal so it exists. */}
-      {activeProject && <ProjectModal project={activeProject} onClose={closeProject} />}
+      {/* Persist the modal in DOM so it can close nicely */
+      activeProject && <ProjectModal project={activeProject} isOpen={isOpen} onClose={closeProject} />}
     </>
   );
 }
